@@ -12,7 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	$folks = DB::select('select * from resoureces');
+
+    return view('welcome', ['folks' => $folks]);
 });
 
 /*
